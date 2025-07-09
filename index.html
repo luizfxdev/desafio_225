@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enigma da Caverna Encantada</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Enigma da Caverna Encantada</h1>
+      <p class="description">
+        Bem-vindo, jovem aventureiro! Resolva o enigma do mago para atravessar a caverna. O código é a soma de todos os
+        números naturais múltiplos de 3 ou 5 menores que o número fornecido.
+      </p>
+
+      <div class="input-group">
+        <input type="number" id="numberInput" placeholder="Digite um número inteiro positivo" min="1" />
+      </div>
+
+      <div class="button-group">
+        <button class="glow-on-hover" id="decipherBtn" type="button">DECIFRAR</button>
+        <button class="glow-on-hover" id="returnBtn" type="button">RETORNAR</button>
+      </div>
+
+      <div class="result-container">
+        <h2>Resultado</h2>
+        <div id="resultOutput"></div>
+        <div id="calculationOutput"></div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

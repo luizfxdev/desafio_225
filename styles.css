@@ -1,0 +1,217 @@
+/* Reset e estilos base */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  font-family: 'Arial', sans-serif;
+  background: url('/images/background.png') center fixed;
+  background-size: cover;
+  color: #fff;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 50px;
+}
+
+/* Container principal */
+.container {
+  max-width: 600px;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
+  border: 1px solid #00ffff;
+  animation: pulse 5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+  }
+}
+
+h1 {
+  color: #ff9900;
+  text-align: center;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px rgba(255, 153, 0, 0.5);
+}
+
+.description {
+  margin-bottom: 50px; /* AJUSTE AQUI: Aumenta espaço entre texto e input */
+  line-height: 1.5;
+  text-align: justify;
+}
+
+/* Grupo de input */
+.input-group {
+  margin-bottom: 40px; /* AJUSTE AQUI: Aumenta espaço entre input e botões */
+  margin-top: 40px; /* AJUSTE AQUI: Aumenta espaço acima do input */
+  padding: 20px 0; /* AJUSTE AQUI: Adiciona padding interno ao grupo do input */
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 5px;
+  border: 1px solid #00ffff;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 16px;
+  outline: none;
+}
+
+.input-group input:focus {
+  border-color: #ff9900;
+  box-shadow: 0 0 10px rgba(255, 153, 0, 0.5);
+}
+
+/* Grupo de botões */
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  margin-top: 25px;
+  gap: 20px;
+}
+
+/* Estilo dos botões (mantendo o que foi fornecido) */
+.glow-on-hover {
+  width: 220px;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  flex: 1;
+}
+
+.glow-on-hover:before {
+  content: '';
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.glow-on-hover:active {
+  color: #000;
+}
+
+.glow-on-hover:active:after {
+  background: transparent;
+}
+
+.glow-on-hover:hover:before {
+  opacity: 1;
+}
+
+.glow-on-hover:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+/* Container de resultado */
+.result-container {
+  background-color: rgba(0, 20, 30, 0.7);
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #00ffff;
+  margin-top: 20px;
+}
+
+.result-container h2 {
+  color: #ff9900;
+  margin-top: 0;
+}
+
+#resultOutput {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 10px 0;
+  color: #00ffaa;
+}
+
+#calculationOutput {
+  margin-top: 15px;
+  line-height: 1.6;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  body {
+    padding: 20px;
+    justify-content: center;
+  }
+
+  .container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+
+  .glow-on-hover {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+}
